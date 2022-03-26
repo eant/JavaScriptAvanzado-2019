@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>MercadoTECH | Tu E-Shop en PHP</title>
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<!--theme-style-->
+	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+	<!--//theme-style-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!--fonts-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<!--//fonts-->
+	<script src="js/jquery.min.js"></script>
+	<style>
+		.producto:nth-child(3n+3){
+			margin-right: 0;
+		}
+		#loading {
+			background-color: rgba(0,0,0,0.65);
+			color: #FFF;
+			text-align: center;
+			position: absolute;
+			width: 100vw; 
+			line-height: 100vh;
+			z-index: 9999;
+			vertical-align: middle;
+			display: none;
+		}
+	</style>
+	<!--script-->
+	</head>
+	<body>
+		<div id="loading">
+			Cargando...
+		</div>
+		<!--header-->
+		<div class="header">
+			<div class="bottom-header">
+				<div class="container">
+					<div class="header-bottom-left">
+						<div class="logo"><a href="index.html">Mercado<strong>TECH</strong></a></div>
+						<!--div class="search">
+							<input type="text" name="q">
+							<input type="submit" value="BUSCAR">
+						</div-->
+						<div class="clearfix"></div>
+					</div>
+					<div class="header-bottom-right">					
+						<div class="account hide">
+							<span></span>
+							<button id="logoutGoogle">[x] Cerrar Sesión</button>
+						</div>
+						<ul class="login">
+							<li><a href="#" id="loginGoogle"><span></span> INGRESAR</a></li>
+							&nbsp;|&nbsp;
+							<li><a href="registro.html">REGISTRARME</a></li>
+							&nbsp;|&nbsp;
+							<li><a href="contacto.html">CONTACTO</a></li>
+						</ul>
+						<!--div class="cart"><a href="producto.html"><span></span>CART</a></div-->
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>	
+				</div>
+			</div>
+		</div>
+		<!---->
+		<div class="container">
+			<section id="page">
+				<!-- PRODUCTOS DESTACADOS -->
+<div class="shoes-grid">
+	<div class="products">
+		<h5 class="latest-product">PRODUCTOS DESTACADOS</h5>
+	</div>
+	<div class="product-left" id="catalogo-destacados">
+
+		<!-- Producto #1 -->
+		<div class="col-sm-4 col-md-4 chain-grid producto hide">
+			<a href="producto.html"><img class="img-responsive chain" src="https://drive.google.com/uc?id=1oLzbcglf2BEEX5mDK-X2PMd2KbVWatsH" alt=" " /></a>
+			<div class="grid-chain-bottom">
+				<h6><a href="producto.html">Lorem ipsum dolor #1</a></h6>
+				<div class="star-price">
+					<div class="dolor-grid"> 
+						<span class="actual">$300</span>
+					</div>
+					<a class="now-get get-cart" href="producto.html">VER MÁS</a> 
+					
+					<button class="now-get get-cart" style="margin:auto;display:none">ACTUALIZAR</button>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="clearfix"> </div>
+</div>
+<!-- ULTIMOS PRODUCTOS -->
+<div class="shoes-grid">
+	<div class="products">
+		<h5 class="latest-product">ULTIMOS PRODUCTOS</h5>	
+		<a class="view-all" href="productos.html">VER TODOS<span></span></a>
+	</div>
+	<div class="product-left">
+		<!-- Producto #1 -->
+		<div class="col-sm-4 col-md-4 chain-grid">
+			<a href="producto.html"><img class="img-responsive chain" src="images/productos/P004.jpg" alt=" " /></a>
+			<span class="star"></span>
+			<div class="grid-chain-bottom">
+				<h6><a href="producto.html">Lorem ipsum dolor #1</a></h6>
+				<div class="star-price">
+					<div class="dolor-grid"> 
+						<span class="actual">$300</span>
+					</div>
+					<a class="now-get get-cart" href="producto.html">VER MÁS</a> 
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Producto #2 -->
+		<div class="col-sm-4 col-md-4 chain-grid">
+			<a href="producto.html"><img class="img-responsive chain" src="images/productos/P005.jpg" alt=" " /></a>
+			<span class="star"></span>
+			<div class="grid-chain-bottom">
+				<h6><a href="producto.html">Lorem ipsum dolor #2</a></h6>
+				<div class="star-price">
+					<div class="dolor-grid"> 
+						<span class="actual">$300</span>
+					</div>
+					<a class="now-get get-cart" href="producto.html">VER MÁS</a> 
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Producto #3 -->
+		<div class="col-sm-4 col-md-4 chain-grid grid-top-chain">
+			<a href="producto.html"><img class="img-responsive chain" src="images/productos/P006.jpg" alt=" " /></a>
+			<span class="star"></span>
+			<div class="grid-chain-bottom">
+				<h6><a href="producto.html">Lorem ipsum dolor #3</a></h6>
+				<div class="star-price">
+					<div class="dolor-grid"> 
+						<span class="actual">$300</span>
+					</div>
+					<a class="now-get get-cart" href="producto.html">VER MÁS</a> 
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"> </div>
+</div>
+			</section>
+		</div>
+
+		<!---->
+		<div class="footer">
+			<div class="footer-top">
+				<div class="container">
+					<div class="latter">
+						<h6>LA MEJOR MANERA DE COMPRAR ONLINE!</h6>
+						<div class="clearfix"></div>
+					</div>
+					<div class="latter-right">
+						<p>SEGUINOS</p>
+						<ul class="face-in-to">
+							<li><a href="https://twitter.com/eanttech"><span></span></a></li>
+							<li><a href="https://www.facebook.com/escueladenuevastecnologias/"><span class="facebook-in"></span></a></li>
+							<div class="clearfix"></div>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<div class="footer-bottom-cate cate-bottom">
+						<h6>DIRECCIÓN</h6>
+						<ul>
+							<li>Suipacha 207 - Piso 1</li>
+							<li>C.A.B.A.</li>
+							<li>Buenos Aires</li>
+							<li>Argentina</li>
+							<li class="phone">(011) 5258 4500</li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<!--initiate accordion-->
+		<script src="https://apis.google.com/js/api:client.js"></script>
+		<script src="js/producto.class.js"></script>
+		<script src="js/ajax.js"></script>
+		<script>
+			////////// LOGIN CON GOOGLE //////////
+			console.log(gapi)
+
+			const mostrarBienvenida = function(){
+				let usuario = auth2.currentUser.get().getBasicProfile()
+				document.querySelector(".account").classList.remove("hide")
+				document.querySelector(".account span").innerText = "Bienvenido " + usuario.ofa
+				document.querySelector(".login").classList.add("hide")
+			}
+
+			const cerrarSesion = function(){
+				document.querySelector(".account").classList.add("hide")
+				document.querySelector(".login").classList.remove("hide")
+			}
+
+			const mostrarBotones = function(mostrar){
+
+				if( mostrar ){
+					
+					document.querySelectorAll("button.now-get").forEach( btn => btn.style.display = "block" )
+
+				} else {
+
+					document.querySelectorAll("button.now-get").forEach( btn => btn.style.display = "none" )
+				}
+			}
+
+			gapi.load('auth2', function(){
+
+				let credenciales = {
+					client_id : "48381509054-c0rqett3o8vet46ao8fef9ftmiq25l3h.apps.googleusercontent.com",
+					cookiepolicy : "single_host_origin"
+				}
+
+				window.auth2 = gapi.auth2.init(credenciales)
+
+				window.auth2.then(function(){
+					//-- ↓ Chequear si esta logeado de antes --//
+					if( window.auth2.isSignedIn.get() == true ){
+						//alert("😄 Estas logeado!!")
+
+						mostrarBienvenida()
+						mostrarBotones(true)
+					} else {
+						//alert("😢 No estas logeado!!")
+						mostrarBotones(false)
+					}
+
+				})
+			})
+			//-- ↓ Iniciar Sesión (manualmente) --//
+			document.querySelector("#loginGoogle").onclick = function(e){
+				e.preventDefault()
+				auth2.signIn().then(function(){ //<-- Login Exitoso!
+					mostrarBienvenida()
+					mostrarBotones(true)
+				})
+			}
+			//-- ↓ Cerrar Sesión (manualmente) --//
+			document.querySelector("#logoutGoogle").onclick = function(e){
+
+				document.querySelector("#loading").style.display = "block"
+
+				auth2.signOut().then(function(){
+					auth2.disconnect()
+					cerrarSesion()
+					mostrarBotones(false)
+
+					window.setTimeout(() => {
+
+						document.querySelector("#loading").style.display = "none"
+
+					}, 5000)
+
+				})
+			}
+			////////// FIN DE LOGIN CON GOOGLE //////////
+
+			//Expiracion de los Local Storage
+			let ahora = new Date() //Nota: 3600 * 1000 = 1hs
+
+			if( (ahora.getTime() - window.localStorage.getItem("_CREACION")) > (3600 * 1000) ){
+
+				window.localStorage.removeItem("_PRODUCTOS")
+
+			}
+
+			//Trabajando con Promesas
+			let compromiso = new Promise(function(ok, error){
+				/* -- Inicio Proceso -- */
+				if( !window.localStorage.getItem("_PRODUCTOS") ){ // ← Si NO existe un Local Storage...
+					
+					get("productos.json").then(function(rta){
+
+						window.localStorage.setItem("_PRODUCTOS", rta )
+						window.localStorage.setItem("_CREACION", ahora.getTime() )
+						
+						ok( rta )
+
+					}).catch(function(rta){
+						error(rta)
+					})
+
+				} else {  // ← Si EFECTIVAMENTE existe un Local Storage...
+					ok( localStorage.getItem("_PRODUCTOS") ) // ← ...enviarlo al then()
+				}
+				/* -- Fin de Proceso -- */
+			})
+
+			compromiso.then(function(rta){ // ← Que hacer si sale bien...
+				//console.log(rta)
+
+				let productos = Producto.parse(rta)
+
+				productos.forEach(producto => {
+					producto.Mostrar("#catalogo-destacados", ".producto")
+					//console.log(producto)
+				})
+			})
+
+			compromiso.catch(function(rta){ // ← Que hacer si sale mal...
+				console.error(rta)
+			})
+		</script>
+	</body>
+</html>

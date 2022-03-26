@@ -1,0 +1,74 @@
+<h1>POO en JavaScript</h1>
+<h2>Otra forma de ver la realidad</h2>
+
+<section id="catalogo" style="border:dashed 2px"></section>
+
+<script src="producto.class.js"></script>
+<script src="ajax.js"></script>
+<script>
+	let productoUno = new Producto("Cafe con Leche", 500, 85.65, true) //<-- Instanciar el Objeto "Producto"
+	/*
+	let productoDos = new Producto("Te de Tilo", 450, 88.25)
+
+	productoUno.Mostrar("#catalogo")
+	productoDos.Mostrar("#catalogo")
+
+	Producto.Comparar(productoUno, productoDos)
+	*/
+
+	/*
+	- Comandos para trabajar con la API Storage de JS
+
+		//window.localStorage.setItem("_PRUEBA", "Soy otro dato distinto guardado en Storage")
+		//window.localStorage.getItem("_PRUEBA")
+		//window.localStorage.removetItem("_PRUEBA")
+		//window.localStorage.clear()
+
+	 */
+
+	let ahora = new Date() //Nota: 3600 * 1000 = 1hs
+
+	if( (ahora.getTime() - window.localStorage.getItem("_CREACION")) > (3600 * 1000) ){
+
+		window.localStorage.removeItem("_PRODUCTOS")
+
+	}
+
+	//Trabajando con Promesas
+	let compromiso = new Promise(function(ok, error){
+		/* -- Inicio Proceso -- */
+		if( !window.localStorage.getItem("_PRODUCTOS") ){ // ← Si NO existe un Local Storage...
+			
+			get("https://api.myjson.com/bins/dcg2p").then(function(rta){
+
+				window.localStorage.setItem("_PRODUCTOS", rta )
+				window.localStorage.setItem("_CREACION", ahora.getTime() )
+			  //window.localStorage.setItem("_PRODUCTOS", JSON.stringify(productos) )
+				
+				ok( rta )
+
+			}).catch(function(rta){
+				error(rta)
+			})
+
+		} else {  // ← Si EFECTIVAMENTE existe un Local Storage...
+			ok( localStorage.getItem("_PRODUCTOS") ) // ← ...enviarlo al then()
+		}
+		/* -- Fin de Proceso -- */
+	})
+
+	compromiso.then(function(rta){ // ← Que hacer si sale bien...
+		console.log(rta)
+
+		let productos = Producto.parse(rta)
+
+		productos.forEach(producto => {
+			producto.Mostrar("#catalogo")
+		})
+	})
+
+	compromiso.catch(function(rta){ // ← Que hacer si sale mal...
+		console.error(rta)
+	})
+
+</script>
